@@ -19,6 +19,13 @@
         <div class="header__img">
             <div class="titleNav__container">
                 <h1 class="titleNav_title">Loopstudios</h1>
+                <ul class="navbar--desktop">
+                    <li><a href="">About</a></li>
+                    <li><a href="">Careers</a></li>
+                    <li><a href="">Events</a></li>
+                    <li><a href="">Products</a></li>
+                    <li><a href="">Support</a></li>
+                </ul>
                 <button class="hamburger">
                     <img class="hamburger--closed" src="images/icon-hamburger.svg" alt="">
                     <img class="hamburger--opened" src="images/icon-close.svg" alt="">
@@ -31,13 +38,7 @@
                     <li><a class="menuItem" href="">Products</a></li>
                     <li><a class="menuItem" href="">Support</a></li>
                 </ul>
-                <ul class="navbar--desktop">
-                    <li><a href="">About</a></li>
-                    <li><a href="">Careers</a></li>
-                    <li><a href="">Events</a></li>
-                    <li><a href="">Products</a></li>
-                    <li><a href="">Support</a></li>
-                </ul>
+
             </nav>
             <div class="navbar__background"></div>
             <div class="headerTitle__container">
@@ -47,6 +48,7 @@
     </header>
 
     <main class="main">
+        <div class="main__grid"></div>
         <picture>
             <source media="(max-width: 799px)" srcset="images/mobile/image-interactive.jpg">
             <img class="main__picture" src="images/desktop/image-interactive.jpg" alt="">
@@ -119,21 +121,26 @@
         </div>
     </section>
     <footer>
-        <h2 class="footer__title">Loopstudios</h2>
-        <ul class="footer__sites">
-            <li><a href="">About</a></li>
-            <li><a href="">Careers</a></li>
-            <li><a href="">Events</a></li>
-            <li><a href="">Products</a></li>
-            <li><a href="">Support</a></li>
-        </ul>
-        <ul class="footer__networks">
-            <li><a href=""><img src="images/icon-facebook.svg" alt=""></a></li>
-            <li><a href=""><img src="images/icon-twitter.svg" alt=""></a></li>
-            <li><a href=""><img src="images/icon-pinterest.svg" alt=""></a></li>
-            <li><a href=""><img src="images/icon-instagram.svg" alt=""></a></li>
-        </ul>
-        <p class="footer__copyrigth">© 2021 Loopstudios. All rights reserved.</p>
+        <div>
+            <h2 class="footer__title">Loopstudios</h2>
+            <ul class="footer__sites">
+                <li><a href="">About</a></li>
+                <li><a href="">Careers</a></li>
+                <li><a href="">Events</a></li>
+                <li><a href="">Products</a></li>
+                <li><a href="">Support</a></li>
+            </ul>
+        </div>
+        <div>
+            <ul class="footer__networks">
+                <li><a href=""><img src="images/icon-facebook.svg" alt=""></a></li>
+                <li><a href=""><img src="images/icon-twitter.svg" alt=""></a></li>
+                <li><a href=""><img src="images/icon-pinterest.svg" alt=""></a></li>
+                <li><a href=""><img src="images/icon-instagram.svg" alt=""></a></li>
+            </ul>
+            <p class="footer__copyrigth">© 2021 Loopstudios. All rights reserved.</p>
+
+        </div>
     </footer>
 </body>
 
@@ -143,11 +150,11 @@
 
 <script>
 
-$(document).ready(function () {
-    $(window).scroll(function () {
-        $('.navbar__background').toggleClass("navbar__background--active", ($(window).scrollTop() > 1));
-     });
-});
+    $(document).ready(function () {
+        $(window).scroll(function () {
+            $('.navbar__background').toggleClass("navbar__background--active", ($(window).scrollTop() > 1));
+        });
+    });
 
 </script>
 

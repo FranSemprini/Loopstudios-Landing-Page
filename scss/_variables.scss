@@ -27,3 +27,17 @@ very_dark_Gray: hsl(0, 0%, 41%),
     } 
 }
 
+@mixin navAnchors {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    color: map-get($colors, white);
+}
+
+@media screen and (min-width: 999px)  {
+    @for $i from 1 through  8 {
+        .creation__article--#{$i} {
+            background-image: url("../images/desktop/#{$i}.jpg");
+        } 
+    }
+}

@@ -96,13 +96,10 @@ header {
 
 .navbar--mobile>li {
     margin: 1.5rem 0 0 1rem;
-}
 
-.navbar--mobile>li>a {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 1.6rem;
-    text-transform: uppercase;
-    color: map-get($colors, white);
+    &>a {
+        @include navAnchors;
+    }
 }
 
 .header__img {
@@ -134,6 +131,7 @@ header {
     text-transform: uppercase;
     font-weight: 300;
     padding: 0.1rem;
+    margin-top: 5px;
 }
 
 // body
@@ -155,6 +153,8 @@ header {
 .main__container {
     padding: 1.5rem 3.2rem;
     text-align: center;
+    grid-area: text;
+    background-color: map-get($colors, white);
 }
 
 .main__title {
@@ -172,6 +172,7 @@ header {
     font-family: 'Alata', sans-serif;
     color: map-get($colors, dark_gray);
     line-height: 1.5rem;
+
 }
 
 .creations {
@@ -262,10 +263,11 @@ footer {
 
 .footer__sites {
     text-align: center;
+    @include flex (column, nowrap, center, center)
 }
 
 .footer__sites>li {
-    margin: 1.3rem 0;
+    margin: 0.8rem 0;
 }
 
 .footer__sites>li>a {
@@ -285,4 +287,170 @@ footer {
 .footer__copyrigth {
     color: map-get($colors, very_dark_Gray);
     font-family: 'Alata', sans-serif;
+}
+
+@media screen and (min-width: 999px) {
+    .navbar--mobile {
+        display: none;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    .navbar__background {
+        display: none;
+    }
+
+    .navbar--desktop {
+        display: flex;
+    }
+
+    .titleNav__container {
+        margin-top: 3rem;
+        align-items: baseline;
+        position: relative;
+
+        &>* {
+            margin: 0 60px;
+        }
+    }
+
+    .navbar--desktop>li>a {
+        @include navAnchors;
+        text-transform: none;
+        margin: 1rem;
+        font-size: 1.3rem;
+    }
+
+    .header__img {
+        background-image: url("../images/desktop/image-hero.jpg");
+    }
+
+    .headerTitle__title {
+        font-size: 5rem;
+        margin-top: 15px;
+    }
+
+    .headerTitle__container {
+        left: 468px;
+        padding: 2rem;
+        width: 603px;
+    }
+
+
+
+    .main {
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-areas:
+            ". . . . . ."
+            ". . . text text text"
+            ". . . text text text";
+        background-image: url(../images/desktop/image-interactive.jpg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 510px;
+        margin: 100px 130px;
+        align-items: flex-end;
+    }
+
+    .main__container {
+        text-align: left;
+        padding: 5rem 0 0 5rem;
+        margin-bottom: -1px;
+    }
+
+    .main__picture {
+        display: none;
+    }
+
+    .main__title {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .main_paragraph {
+        font-size: 1.15rem;
+    }
+
+    .creations {
+        margin: 100px 130px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "title button"
+            "article article";
+    }
+
+    .creation__container {
+        display: grid;
+        grid-auto-rows: 27rem;
+        grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+        grid-area: article;
+        gap: 5rem;
+    }
+
+    .creations__title {
+        text-align: left;
+        grid-area: title;
+        margin: 0;
+        padding: 0;
+    }
+
+    .creation__article {
+        width: unset;
+        height: unset;
+        margin: 0;
+
+        &::before {
+            background: rgb(0, 0, 0);
+            background: rgb(0, 0, 0);
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.5536589635854341) -1%, rgba(0, 0, 0, 0) 38%, rgba(0, 0, 0, 0) 100%);
+        }
+    }
+
+    .creation__button__container {
+        grid-area: button;
+        text-align: right;
+    }
+
+    .creation__text {
+        padding: 21.2rem 1rem 2rem 1.5rem;
+
+        &>h5 {
+            font-size: 2rem;
+        }
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 2rem 130px;
+    }
+
+    .footer__title {
+        margin: 0 0 2rem 0;
+        padding: 0;
+    }
+
+    .footer__sites {
+        flex-direction: row;
+        margin: 0;
+        padding: 0;
+        &>li {
+            margin: 0 2rem 0 0;
+        }
+    }
+
+    .footer__networks {
+        justify-content: flex-end;
+        margin: 0 0 2rem 0;
+        padding: 0;
+        &>li {
+            margin: 0 0 0 2rem;
+        }
+    }
+
 }
