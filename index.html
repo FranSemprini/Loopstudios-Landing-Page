@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap"
+        rel="stylesheet">
+    <title>Frontend Mentor | Loopstudios landing page</title>
+</head>
+
+<body>
+    <header>
+        <div class="header__img">
+            <div class="titleNav__container">
+                <h1 class="titleNav_title">Loopstudios</h1>
+                <button class="hamburger">
+                    <img class="hamburger--closed" src="images/icon-hamburger.svg" alt="">
+                    <img class="hamburger--opened" src="images/icon-close.svg" alt="">
+        </div>
+            <nav class="titleNav__navbar">
+                <ul class="navbar--mobile">
+                    <li><a class="menuItem" href="">About</a></li>
+                    <li><a class="menuItem" href="">Careers</a></li>
+                    <li><a class="menuItem" href="">Events</a></li>
+                    <li><a class="menuItem" href="">Products</a></li>
+                    <li><a class="menuItem" href="">Support</a></li>
+                </ul>
+                <ul class="navbar--desktop">
+                    <li><a href="">About</a></li>
+                    <li><a href="">Careers</a></li>
+                    <li><a href="">Events</a></li>
+                    <li><a href="">Products</a></li>
+                    <li><a href="">Support</a></li>
+                </ul>
+            </nav>
+            <div class="headerTitle__container">
+                <h1 class="headerTitle__title">Immersive experiences that deliver</h1>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <picture>
+            <source media="(max-width: 799px)" srcset="images/mobile/image-interactive.jpg">
+            <img class="main__picture" src="images/desktop/image-interactive.jpg" alt="">
+        </picture>
+
+        <div class="main__container">
+            <h1 class="main__title">The leader in interactive VR</h1>
+            <p class="main_paragraph"> Founded in 2011, Loopstudios has been producing world-class virtual reality
+                projects for some of the best companies around the globe. Our award-winning
+                creations have transformed businesses through digital experiences that bind
+                to their brand.</p>
+        </div>
+    </main>
+    <section>
+        <div class="creations">
+            <h3 class="creations__title"> Our Creations</h3>
+            <div class="creation__container">
+                <article class="creation__article creation__article--1">
+                    <div class="creation__text">
+                        <h5>Deep </h5>
+                        <h5>earth</h5>
+                    </div>
+                </article>
+                <article class="creation__article creation__article--2">
+                    <div class="creation__text">
+                        <h5>Night</h5>
+                        <h5>arcade</h5>
+                    </div>
+                </article>
+                <article class="creation__article creation__article--3">
+                    <div class="creation__text">
+                        <h5>Soccer</h5>
+                        <h5>team VR</h5>
+                    </div>
+                </article>
+                <article class="creation__article creation__article--4">
+                    <div class="creation__text">
+                        <h5>The</h5>
+                        <h5>grid</h5>
+                    </div>
+                </article>
+                <article class="creation__article creation__article--5">
+                    <div class="creation__text">
+                        <h5>From up</h5>
+                        <h5>above VR</h5>
+                    </div>
+                </article>
+                <article class="creation__article creation__article--6">
+                    <div class="creation__text">
+                        <h5>Pocket</h5>
+                        <h5>borealis</h5>
+                    </div>
+                </article>
+                <article class="creation__article creation__article--7">
+                    <div class="creation__text">
+                        <h5>The</h5>
+                        <h5>curiosity</h5>
+                    </div>
+                </article>
+                <article class="creation__article creation__article--8">
+                    <div class="creation__text">
+                        <h5>Make it</h5>
+                        <h5>fisheye</h5>
+                    </div>
+                </article>
+            </div>
+            <div class="creation__button__container">
+                <button class="creation__button">See all</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <h2 class="footer__title">Loopstudios</h2>
+        <ul class="footer__sites">
+            <li><a href="">About</a></li>
+            <li><a href="">Careers</a></li>
+            <li><a href="">Events</a></li>
+            <li><a href="">Products</a></li>
+            <li><a href="">Support</a></li>
+        </ul>
+        <ul class="footer__networks">
+            <li><a href=""><img src="images/icon-facebook.svg" alt=""></a></li>
+            <li><a href=""><img src="images/icon-twitter.svg" alt=""></a></li>
+            <li><a href=""><img src="images/icon-pinterest.svg" alt=""></a></li>
+            <li><a href=""><img src="images/icon-instagram.svg" alt=""></a></li>
+        </ul>
+        <p class="footer__copyrigth">© 2021 Loopstudios. All rights reserved.</p>
+    </footer>
+</body>
+
+
+
+<script>
+    const menu = document.querySelector(".navbar--mobile");
+    const menuItems = document.querySelectorAll(".menuItem");
+    const hamburger = document.querySelector(".hamburger");
+    const closeIcon = document.querySelector(".hamburger--opened");
+    const menuIcon = document.querySelector(".hamburger--closed");
+
+    function toggleMenu() {
+        if (menu.classList.contains("showMenu")) {
+            menu.classList.remove("showMenu");
+            closeIcon.style.display = "none";
+            menuIcon.style.display = "block";
+        } else {
+            menu.classList.add("showMenu");
+            closeIcon.style.display = "block";
+            menuIcon.style.display = "none";
+        }
+    }
+
+    hamburger.addEventListener("click", toggleMenu);
+
+    menuItems.forEach(
+        function (menuItem) {
+            menuItem.addEventListener("click", toggleMenu);
+        }
+    )
+</script>
+
+
+</html>

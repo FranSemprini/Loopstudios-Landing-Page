@@ -1,0 +1,29 @@
+
+$colors : (
+White: hsl(0, 0%, 100%),
+black: hsl(0, 0%, 0%),
+dark_gray: hsl(0, 0%, 55%),
+very_dark_Gray: hsl(0, 0%, 41%),
+);
+
+@mixin resets {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin flex ($direcion, $wrap, $justify, $align) {
+    display: flex;
+    flex-direction: $direcion;
+    flex-wrap: $wrap;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@for $i from 1 through  8 {
+    .creation__article--#{$i} {
+        background-image: url("../images/mobile/#{$i}.jpg");
+    } 
+}
+
