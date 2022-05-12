@@ -34,6 +34,27 @@ very_dark_Gray: hsl(0, 0%, 41%),
     color: map-get($colors, white);
 }
 
+@mixin hoverLine {
+    position: relative;
+    &::after {
+        content: "";
+        width: 55%;
+        height: 3px;
+        background-color: white;
+        position: absolute;
+        top: 31px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: opacity 0.2s;
+    }
+    &:hover {
+        &:after {
+            opacity: 1;
+        }
+    }
+}
+
 @media screen and (min-width: 999px)  {
     @for $i from 1 through  8 {
         .creation__article--#{$i} {
