@@ -22,7 +22,7 @@
                 <button class="hamburger">
                     <img class="hamburger--closed" src="images/icon-hamburger.svg" alt="">
                     <img class="hamburger--opened" src="images/icon-close.svg" alt="">
-        </div>
+            </div>
             <nav class="titleNav__navbar">
                 <ul class="navbar--mobile">
                     <li><a class="menuItem" href="">About</a></li>
@@ -39,6 +39,7 @@
                     <li><a href="">Support</a></li>
                 </ul>
             </nav>
+            <div class="navbar__background"></div>
             <div class="headerTitle__container">
                 <h1 class="headerTitle__title">Immersive experiences that deliver</h1>
             </div>
@@ -136,6 +137,19 @@
     </footer>
 </body>
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+<script>
+
+$(document).ready(function () {
+    $(window).scroll(function () {
+        $('.navbar__background').toggleClass("navbar__background--active", ($(window).scrollTop() > 1));
+     });
+});
+
+</script>
 
 
 <script>
